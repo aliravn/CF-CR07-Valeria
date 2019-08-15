@@ -1,6 +1,6 @@
-
-
-// object LOcation created and dislayed
+//===================================================================
+// constructor for basic class Location + 1 instance testing created
+//===================================================================
 class Location {
     constructor(name, city, zipCode, address, image) {
           this.name = name;
@@ -24,12 +24,13 @@ class Location {
 
 var place1 = new Location("Karlskirche", "Vienna", "1010", "Karlsplatz 1", "img/test_Karlsplatz.jpg");
 // $("#place").prepend(place1.display());
+// console.log(place1.name);
+// console.log(place1.showAddress());
+// console.log(place1.teaserImage);
 
-console.log(place1.name);
-console.log(place1.showAddress());
-console.log(place1.teaserImage);
-
-// object Restaurant
+//====================================================
+// class Restaurant  + 1 instance created for testing
+//====================================================
 class Restaurant extends Location {
     constructor(name, city, zipCode, address, image, phone, cusine, webPage) {
           super(name, city, zipCode, address, image);
@@ -55,15 +56,14 @@ class Restaurant extends Location {
 
 var rest1 = new Restaurant("Lemontree", "Bagdad", "1150", "Kurbatra 3", "img/test_rest_sixta.png", "phoneNumber", "cusineType", "webPage")
 // $("#rest").prepend(rest1.display());
+// console.log(rest1.name);
+// console.log(rest1.showAddress());
+// console.log(rest1.teaserImage);
+// console.log(rest1.phoneNumber, rest1.cusineType, rest1.webPage);
 
-console.log(rest1.name);
-console.log(rest1.showAddress());
-console.log(rest1.teaserImage);
-console.log(rest1.phoneNumber, rest1.cusineType, rest1.webPage);
-
-
-
-// object Event
+//===============================================
+// class EVENT  + 1 instance created for testing
+//===============================================
 class Event extends Location {
     constructor(name, city, zipCode, address, image, date, time, ticketPrice) {
           super(name, city, zipCode, address, image);
@@ -76,7 +76,7 @@ class Event extends Location {
     }
     display() {
     	return `
-    	<img class="mr-3 col-3" src="${this.teaserImage}">
+    	<img class="mr-3 col-0 col-sm-3" src="${this.teaserImage}">
     	<div class="media-body col-9">
     		<p class="m-0">${this.name}</p>
     		<p class="m-0">${this.showAddress()}</p>
@@ -89,14 +89,15 @@ class Event extends Location {
 
 var event1 = new Event("BonJovi", "Ernst Happel Stadion", "1020", "Stadionplatz 1", "img/test_zoo.jpg", "17.07.2019", "19:00", "80 EUR")
 // $("#event").prepend(event1.display());
-
-console.log(event1.name);
-console.log(event1.showAddress());
-console.log(event1.teaserImage);
-console.log(event1.date, event1.time, event1.ticketPrice);
-
+// console.log(event1.name);
+// console.log(event1.showAddress());
+// console.log(event1.teaserImage);
+// console.log(event1.date, event1.time, event1.ticketPrice);
 
 
+//============================================================
+// array of object, created using the above clss constructors
+//============================================================
 var renderList = [
 	new Location("Karlskirche", "Vienna", "1010", "Karlsplatz 1", "img/test_Karlsplatz.jpg"),
 	new Location("Stephansdom", "Vienna", "1010", "Karlsplatz 1", "img/test_Karlsplatz.jpg"),
@@ -105,9 +106,11 @@ var renderList = [
 	new Event("BonJovi", "Ernst Happel Stadion", "1020", "Stadionplatz 1", "img/test_zoo.jpg", "17.07.2019", "19:00", "80 EUR"),
 	new Event("Rammstein", "Ernst Happel Stadion", "1020", "Stadionplatz 1", "img/test_zoo.jpg", "17.07.2019", "19:00", "80 EUR")
 ];
+// console.log(renderList);
 
-console.log(renderList);
-
+//==============================================================================
+// function for rendering the objects from the array to display them in webpage
+//==============================================================================
 renderList.forEach(function(item) {
-	$("#event").prepend(item.display());
+	$("#event").append(item.display());
 });
