@@ -12,8 +12,8 @@ class Location {
     }
     display() {
     	return `
-    	<img class="mr-3 w-25" src="${this.teaserImage}">
-    	<div class="media-body">
+    	<img class="mr-3 col-3" src="${this.teaserImage}">
+    	<div class="media-body col-9">
     		<p class="m-0">${this.name}</p>
     		${this.showAddress()}
     	</div>`
@@ -41,14 +41,13 @@ class Restaurant extends Location {
     }
     display() {
     	return `
-    	<img class="mr-3 w-25" src="${this.teaserImage}">
-    	<div class="media-body">
+    	<img class="mr-3 col-3" src="${this.teaserImage}">
+    	<div class="media-body col-9">
     		<p class="m-0">${this.name}</p>
     		<p class="m-0">${this.showAddress()}</p>
     		<p class="m-0">${this.phoneNumber}</p>
     		<p class="m-0">${this.cusineType}</p>
-    		<p class="m-0">${this.webPage}</p>
-    		
+    		<p class="m-0">${this.webPage}</p>   		
     	</div>`
     }
 }
@@ -59,4 +58,37 @@ $("#rest").prepend(rest1.display());
 console.log(rest1.name);
 console.log(rest1.showAddress());
 console.log(rest1.teaserImage);
-console.log(rest1.phoneNumber);
+console.log(rest1.phoneNumber, rest1.cusineType, rest1.webPage);
+
+
+// object Event
+class Event extends Location {
+    constructor(name, city, zipCode, address, image, date, time, ticketPrice) {
+          super(name, city, zipCode, address, image);
+          this.date = date;
+          this.time = time;
+          this.ticketPrice = ticketPrice;
+    }
+    showAddress() {
+        return `${super.showAddress()}`;
+    }
+    display() {
+    	return `
+    	<img class="mr-3 col-3" src="${this.teaserImage}">
+    	<div class="media-body col-9">
+    		<p class="m-0">${this.name}</p>
+    		<p class="m-0">${this.showAddress()}</p>
+    		<p class="m-0">${this.date}</p>
+    		<p class="m-0">${this.time}</p>
+    		<p class="m-0">${this.ticketPrice}</p>  		
+    	</div>`
+    }
+}
+
+var event1 = new Event("BonJovi", "Ernst Happel Stadion", "1020", "Stadionplatz 1", "img/test_zoo.jpg", "17.07.2019", "19:00", "80 EUR")
+$("#event").prepend(event1.display());
+
+console.log(event1.name);
+console.log(event1.showAddress());
+console.log(event1.teaserImage);
+console.log(event1.date, event1.time, event1.ticketPrice);
