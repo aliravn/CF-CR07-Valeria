@@ -143,9 +143,9 @@ renderList.sort(function(a,b) { //descending order
 });
 
 console.log(renderList);
-// cloneList.forEach(function(item) {
-// 	$("#event").append(item.display());
-// });
+renderList.forEach(function(item) {
+	$("#event").append(item.display());
+});
 // console.log(renderList);
 // var cloneListDescending = renderList.slice(0);
 // console.log(cloneListDescending);
