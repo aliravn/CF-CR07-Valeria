@@ -25,18 +25,18 @@ class Location {
 		return `${this.address}, ${this.zipCode} ${this.city}`;
 	}
 	display() {
-		return `
-		<div class="col-12 col-md-6 col-lg-3 p-2 mq-flex-sm bg-danger">
-			<img class="img-fluid" src="${this.teaserImage}">
-			<h4 class="">${this.name}</h4>
-			<p class="">Created: ${this.timestamp}</p>
-			<div class="text-container">
-				<p class="">${this.showAddress()}</p>
-			</div>
+		return `<div class="col-12 col-md-6 col-lg-3 p-2">
+			<div class="col-border">
+				<img class="img-fluid img-thumbnail col-border-thumbnail" src="${this.teaserImage}">
+				<h4 class="">${this.name}</h4>
+				<p class="">Created: ${this.timestamp}</p>
+				<div class="text-container">
+					<p class="">${this.showAddress()}</p>
+				</div>
+			</div>	
 		</div>`
 	}
 }
-
 
 // var place1 = new Location("Karlskirche", "Vienna", "1010", "Karlsplatz 1", "img/test_Karlsplatz.jpg");
 // $("#place").prepend(place1.display());
@@ -58,15 +58,17 @@ class Restaurant extends Location {
 		return `${super.showAddress()}`;
 	}
 	display() {
-		return `<div class="col-12 col-md-6 col-lg-3 p-2 bg-warning">
-			<img class="img-fluid" src="${this.teaserImage}">
-			<h4 class="">${this.name}</h4>
-			<p class="">Created: ${this.timestamp}</p>
-			<div class="text-container">
-				<p class="">${this.showAddress()}</p>
-				<p class="">${this.phoneNumber}</p>
-				<p class="">${this.cusineType}</p>
-				<p class="">${this.webPage}</p>
+		return `<div class="col-12 col-md-6 col-lg-3 p-2">
+			<div class="col-border">
+				<img class="img-fluid img-thumbnail col-border-thumbnail" src="${this.teaserImage}">
+				<h4 class="">${this.name}</h4>
+				<p class="">Created: ${this.timestamp}</p>
+				<div class="text-container">
+					<p class="">${this.showAddress()}</p>
+					<p class="">${this.phoneNumber}</p>
+					<p class="">${this.cusineType}</p>
+					<p class="">${this.webPage}</p>
+				</div>
 			</div>
 		</div>`
 	}
@@ -93,15 +95,17 @@ class Event extends Location {
 		return `${super.showAddress()}`;
 	}
 	display() {
-		return `<div class="col-12 col-md-6 col-lg-3 p-2 bg-primary">
-			<img class="img-fluid" src="${this.teaserImage}">
-			<h4 class="">${this.name}</h4>
-			<p class="">Created: ${this.timestamp}</p>
-			<div class="text-container">
-				<p class="">${this.showAddress()}</p>
-				<p class="">${this.date}</p>
-				<p class="">${this.time}</p>
-				<p class="">${this.ticketPrice}</p>
+		return `<div class="col-12 col-md-6 col-lg-3 p-2">
+			<div class="col-border">
+				<img class="img-fluid img-thumbnail col-border-thumbnail" src="${this.teaserImage}">
+				<h4 class="">${this.name}</h4>
+				<p class="">Created: ${this.timestamp}</p>
+				<div class="text-container">
+					<p class="">${this.showAddress()}</p>
+					<p class="">${this.date}</p>
+					<p class="">${this.time}</p>
+					<p class="">${this.ticketPrice}</p>
+				</div>
 			</div>
 		</div>`
 	}
@@ -135,17 +139,23 @@ renderList.forEach(function(item) {
 //========================
 // sorting functions
 //========================
-var cloneList = renderList.slice(0); // clone original arry before it is sorted
-console.log(cloneList);
+// var cloneList = renderList.slice(0); // clone original arry before it is sorted
+// console.log(cloneList);
 
-renderList.sort(function(a,b) { //descending order
-  return new Date(b.timestamp) - new Date(a.timestamp);
-});
+// renderList.sort(function(a,b) { //descending order
+//   return new Date(b.timestamp) - new Date(a.timestamp);
+// });
 
-console.log(renderList);
-renderList.forEach(function(item) {
-	$("#event").append(item.display());
-});
+// console.log(renderList);
+// renderList.forEach(function(item) {
+// 	$("#event").append(item.display());
+// });
+
+
+
+
+
+
 // console.log(renderList);
 // var cloneListDescending = renderList.slice(0);
 // console.log(cloneListDescending);
