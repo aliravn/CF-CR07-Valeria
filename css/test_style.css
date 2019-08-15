@@ -1,6 +1,7 @@
 body {
   background-color: darkgrey;
-  margin: 0 auto; }
+  margin: 0 auto;
+  color: #000000; }
 
 .btn-outline-primary {
   border-color: #70f17c;
@@ -16,7 +17,10 @@ body {
   height: 100%;
   border: 0.5vw solid #70f17c;
   border-radius: 1vw 3vw;
-  padding: 1rem; }
+  padding: 0.7rem; }
+  .col-border > p {
+    font-size: 0.9rem;
+    color: #e0d5d5; }
 
 .col-border-thumbnail {
   border-radius: 1vw 3vw; }
@@ -31,6 +35,9 @@ footer {
 
 h4, .text-container > p {
   margin: 0; }
+
+h4 {
+  margin-top: 0.5rem; }
 
 .nav-link {
   color: #70f17c; }
