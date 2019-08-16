@@ -41,6 +41,12 @@ body {
   background-color: #61605d;
   box-shadow: 2px 2px 3px white, -2px -2px 3px white; }
 
+#selector {
+  width: 15vw; }
+
+#search-field {
+  width: 20vw; }
+
 .row {
   background-color: grey;
   padding: 0 1rem; }
