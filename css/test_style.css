@@ -28,7 +28,7 @@ body {
   background-color: grey;
   padding: 0; }
 
-h4, .text-container > p {
+h1, h4, .text-container > p {
   margin: 0; }
 
 h4 {
