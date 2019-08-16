@@ -45,7 +45,7 @@ class Restaurant extends Location {
 	display() {
 		return `
 <div class="col-12 col-md-6 col-lg-3 p-2">
-	<div class="col-border">
+	<div class="col-border col-border-blue">
 		<img class="img-fluid img-thumbnail d-none d-md-block" src="${this.teaserImage}">
 		<h4 class="">${this.name}</h4>
 		<p class="">Created: ${this.timestamp}</p>
@@ -75,7 +75,7 @@ class Event extends Location {
 	}
 	display() {
 		return `<div class="col-12 col-md-6 col-lg-3 p-2">
-			<div class="col-border">
+			<div class="col-border col-border-orange">
 				<img class="img-fluid img-thumbnail d-none d-md-block" src="${this.teaserImage}">
 				<h4 class="">${this.name}</h4>
 				<p class="">Created: ${this.timestamp}</p>
