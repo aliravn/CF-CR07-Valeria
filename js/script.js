@@ -34,11 +34,11 @@ var renderList = [
 //==============================================================================
 function render(item) {
 	if (item.phoneNumber == undefined && item.date == undefined) {
-		$("#place").append(item.display());
+		$(".place").append(item.display());
 	} else if (item.date == undefined) {
-		$("#restaurant").append(item.display());
+		$(".restaurant").append(item.display());
 	} else {
-		$("#event").append(item.display());
+		$(".event").append(item.display());
 	}
 }
 
