@@ -8,7 +8,7 @@ class Location {
 		  this.zipCode = zipCode;
 		  this.address = address;    
 		  this.teaserImage = image;
-		  this.timestamp = timestamp
+		  this.timestamp = createRandomDate(new Date(2017, 0, 1), new Date());
 		  // renderList.push(this);
 	}
 
@@ -223,7 +223,7 @@ function renderOption() {
 }
 
 //===================================================================
-// function to create random date to be a "created" property of each object
+// function to create random date to be used as "created" property of each object
 //===================================================================
 var start = new Date(2015, 0, 1); // year, month (as index), date
 var end = new Date(); // current date
@@ -233,4 +233,3 @@ function createRandomDate(start, end) {
 	var createdDate = str.slice(5,22);
 	return createdDate;
 }
-console.log(createRandomDate(start, end));
