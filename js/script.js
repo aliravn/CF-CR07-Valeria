@@ -26,7 +26,7 @@ var renderList = [
 	new Event("hEvent1", "City", "PLZ", "Address", "img/test_zoo.jpg", `Feb 05 2018 12:00`, "eventDate", "eventTime", "price"),
 	new Event("iEvent2", "City", "PLZ", "Address", "img/test_zoo.jpg", `Jan 09 2018 12:00`, "eventDate", "eventTime", "price"),
 	new Event("aEvent3", "City", "PLZ", "Address", "img/test_zoo.jpg", `Jun 12 2018 12:00`, "eventDate", "eventTime", "price"),
-	new Event("zEvent4", "City", "PLZ", "Address", "img/test_zoo.jpg", `Dec 21 2016 12:00`, "eventDate", "eventTime", "price")
+	new Event("aEvent3", "City", "PLZ", "Address", "img/test_zoo.jpg", `Jun 12 2018 12:00`, "eventDate", "eventTime", "price")
 ];
 
 //==============================================================================
@@ -42,21 +42,17 @@ function render(item) {
 	}
 }
 
-// renderList.forEach(render);
+//==============================================================================
+// sorting functions (ascend, descend, a-z) and call for render function are in separate files
+// otherwise they interfer with one another and/or need a separate trigger to separate the function scopes
+//==============================================================================
 
-//========================
-// sorting functions - tested both 16.08. / 10:40 working
-//========================
-// var renderListAscend = renderList.slice(0); // clone original array before it is sorted
-// var renderListDescend = renderList.slice(0);
-// var renderListAtoZ = renderList.slice(0);
-// renderListDescend.sort(function(a,b) { //descending order
-// 	return new Date(b.timestamp) - new Date(a.timestamp);
-// });
-// renderListDescend.forEach(render) // rendering objects in new order
 
-// renderListAscend.sort(function(a,b) { //ascending order
-// 	return new Date(a.timestamp) - new Date(b.timestamp);
-// });
-// renderListAscend.forEach(render) // rendering objects in new order
-
+//==============================================================================
+// function on SEARCH button to focus(scroll to) particular section
+//==============================================================================
+$("#search-button").click(function(e){
+	e.preventDefault();
+	var focusTarget = $("#search-field").val()
+	window.location.hash = `#${focusTarget}`;
+})
