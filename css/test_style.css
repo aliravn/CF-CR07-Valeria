@@ -37,9 +37,19 @@ body {
 h1, h4, .text-container > p {
   margin: 0; }
 
+.text-container > p {
+  font-size: 0.9rem; }
+
+.web-link {
+  color: #ffffff; }
+
+h1 {
+  color: black;
+  text-shadow: 3px 3px 5px #70f17c, -3px -3px 5px #70f17c; }
+
 h4 {
   margin-top: 0.5rem;
-  font-size: 1.22rem;
+  font-size: 1.5rem;
   font-weight: bold; }
 
 footer {
@@ -54,6 +64,9 @@ footer {
   .col-border {
     border: none;
     padding: 0;
-    border-radius: 0px; } }
+    border-radius: 0px; }
+
+  h4 {
+    font-size: 1.3rem; } }
 
 /*# sourceMappingURL=test_style.css.map */

@@ -15,7 +15,7 @@ class Location {
 		  this.address = address;    
 		  this.teaserImage = image;
 		  this.timestamp = timestamp
-		  renderList.push(this);
+		  // renderList.push(this);
 	}
 
 	showAddress() {
@@ -59,7 +59,7 @@ class Restaurant extends Location {
 			<p class="">${this.showAddress()}</p>
 			<p class="">${this.phoneNumber}</p>
 			<p class="">${this.cusineType}</p>
-			<p class="">${this.webPage}</p>
+			<a class="web-link" href="https://${this.webPage}" target="_blank">${this.webPage}</a>
 		</div>
 	</div>
 </div>`
@@ -97,7 +97,7 @@ class Event extends Location {
 }
 
 //=======================================================================================================
-// array of object, created using the class constructors in separate files
+// array of objects, created using the class constructors 
 //=======================================================================================================
 renderList = [
 	new Location("Hundertwasser House", "Vienna", "1030", "Kegelgasse 36-38", "img/place_hundertwasserhaus.jpg", `Mar 06 2012 16:00`),
@@ -110,10 +110,10 @@ renderList = [
 	new Location("Winchester Mystery House", "San Jose", "CA 95128", "525 S Winchester Blvd", "img/place_winchester.jpg", `Mar 01 2012 10:00`),
 	new Restaurant("Donburi", "Vienna", "1020", "Lassallestraße 6", "img/rest_asian.jpg", `May 21 2010 15:00`, "+43 1 7200034", "asian", "www.donburiasiacuisine.at"),
 	new Restaurant("MAREDO", "Vienna", "1010", "Opernring 3/5", "img/rest_maredo.jpg", `May 05 2010 15:00`, "+43 1 5867722", "steakhouse", "www.maredo.at"),
-	new Restaurant("Vapiano", "Vienna", "1100", "Triester Straße 64", "img/rest_vapiano.jpg", `May 30 2010 15:00`, "+43 1 6008282", "italian", "www.vapiano.at"),
-	new Restaurant("Sushi Cross", "Vienna", "1030", "Landstraßer Hauptstraße 1b", "img/rest_sushicross.jpg", `May 21 2010 10:00`, "+43 1 2121210", "asian", "www.sushi-cross.at"),
+	new Restaurant("Vapiano", "Vienna", "1100", "Triester Straße 64", "img/rest_vapiano.jpg", `May 30 2010 15:00`, "+43 1 6008282", "italian", "www.mjam.net"),
+	new Restaurant("Sushi Cross", "Vienna", "1030", "Wien Mitte Mall", "img/rest_sushicross.jpg", `May 21 2010 10:00`, "+43 1 2121210", "asian", "www.sushi-cross.at"),
 	new Restaurant("el Gaucho", "Vienna", "1020", "Praterstrasse 1", "img/rest_elgaucho.jpg", `May 21 2010 10:00`, "+43 680 2365804", "steakhouse", "www.elgaucho.at"),
-	new Restaurant("Gasthaus Elsner", "1150", "PLZ", "Neumayrgasse 2", "img/rest_gasthaus.jpg", `May 21 2010 10:00`, "+43 1 4925596", "viennese", "www.gasthaus-elsner.at"),
+	new Restaurant("Gasthaus Elsner", "1150", "PLZ", "Neumayrgasse 2", "img/rest_gasthaus.jpg", `May 21 2010 10:00`, "+43 1 4925596", "viennese", "www.mjam.net"),
 	new Event("BonJovi", "Moscow", "123456", "Olympic Stadium, Olimpiyskiy Prospekt, 16", "img/event_bonjovi.jpg", `Feb 05 2018 12:00`, "31.05.2019", "19:00", "75 EUR"),
 	new Event("Rammstein", "Vienna", "1020", "Ernst Happel Stadion Wien, Meiereistrasse 7", "img/event_rammstein.jpg", `Jan 09 2018 12:00`, "23.08.2019", "19:00", "101 EUR"),
 	new Event("Lindsey Stirling", "Vienna", "1110", "Bank Austria Halle Gasometer, Guglgasse 8", "img/event_stirling.jpg", `Jun 12 2018 12:00`, "16.09.2019", "20:00", "55 EUR"),
@@ -122,7 +122,7 @@ renderList = [
 	new Event("Metallica", "Vienna", "1020", "Ernst Happel Stadion Wien, Meiereistrasse 7", "img/event_metallica.jpg", `Feb 05 2018 12:00`, "16.08.2019", "19:00", "150 EUR")
 ];
 
-console.log(renderList);
+// console.log(renderList);
 //==============================================================================
 // function for rendering the objects from the array to display them in webpage - tested 16.08 / 10:00 working
 //==============================================================================
@@ -140,7 +140,7 @@ function render(item) {
 // sorting functions (ascend, descend, a-z) and call for render function are in separate files
 // otherwise they interfer with one another and/or need a separate trigger to separate the function scopes
 //==============================================================================
-
+console.log($("#test").val());
 
 //==============================================================================
 // function on SEARCH button to focus(scroll to) particular section
