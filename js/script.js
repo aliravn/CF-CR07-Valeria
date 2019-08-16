@@ -11,9 +11,9 @@
 // console.log(randomDate(start, end));
 
 
-//============================================================
-// array of object, created using the above clss constructors
-//============================================================
+//===========================================================================
+// array of object, created using the class constructors in separate files
+//===========================================================================
 var renderList = [
 	new Location("Location1", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 12 2012 10:00`),
 	new Location("Location2", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 12 2012 10:00`),
@@ -31,10 +31,11 @@ var renderList = [
 // console.log(renderList);
 
 //==============================================================================
-// function for rendering the objects from the array to display them in webpage
+// function for rendering the objects from the array to display them in webpage - tested 16.08 / 10:00 working
 //==============================================================================
-renderList.forEach(function(item) {
-	console.log(item.date, item.phoneNumber);
+renderList.forEach(render);
+
+function render(item) {
 	if (item.phoneNumber == undefined && item.date == undefined) {
 		$("#place").append(item.display());
 	} else if (item.date == undefined) {
@@ -42,22 +43,23 @@ renderList.forEach(function(item) {
 	} else {
 		$("#event").append(item.display());
 	}
-});
-
+}
 //========================
 // sorting functions
 //========================
-// var cloneList = renderList.slice(0); // clone original arry before it is sorted
-// console.log(cloneList);
-
-// renderList.sort(function(a,b) { //descending order
-//   return new Date(b.timestamp) - new Date(a.timestamp);
-// });
-
+// var renderListAscend = renderList.slice(0); // clone original array before it is sorted
+// var renderListDescend = renderList.slice(0);
 // console.log(renderList);
-// renderList.forEach(function(item) {
-// 	$("#event").append(item.display());
+// console.log(renderListAscend);
+// console.log(renderListDescend);
+
+// renderListDescend.sort(function(a,b) { //descending order
+// 	return new Date(b.timestamp) - new Date(a.timestamp);
 // });
+
+// renderListDescend.forEach(function(item) { // rendering objects in new order
+// // 	$("#event").append(item.display());
+// // });
 
 
 
