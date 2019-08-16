@@ -208,13 +208,16 @@ function renderOption() {
 		renderList.forEach(renderAll);
 
 	} else if (displaySelector.val() == "places") {
-		
+		$("#places, .places-header").show();
+		$("#restaurants, .restaurants-header, #events, .events-header, .initial-hide").hide();
 
 	} else if (displaySelector.val() == "restaurants") {
-
+		$("#restaurants, .restaurants-header").show();
+		$("#places, .places-header, #events, .events-header, .initial-hide").hide();
 
 	} else if (displaySelector.val() == "events") {
-
+		$("#events, .events-header").show();
+		$("#restaurants, .restaurants-header, #places, .places-header, .initial-hide").hide();
 
 	} else {
 		$(".initial-show, .initial-show-header").show();
@@ -224,16 +227,6 @@ function renderOption() {
 	}
 		
 }
-
-
-
-						// <option value="all">Show entries as...</option>
-						// <option value="asc">...oldest first</option>
-						// <option value="desc">...newest first</option>
-						// <option value="a-z">...A-Z</option>
-						// <option value="places">...only Places</option>
-						// <option value="restaurants">...only Restaurants</option>
-						// <option value="events">...only Events</option>
 
 //===================================================================
 // function to create random date for each object
