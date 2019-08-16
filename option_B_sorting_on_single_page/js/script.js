@@ -119,7 +119,7 @@ var renderList = [
 var renderListOriginal = renderList.slice(0); // clone original list to be able to display original order of objects after any sorting
 
 //==============================================================================
-// function for rendering the objects from the array to display them in webpage - tested 16.08 / 10:00 working
+// functions for rendering the objects from the array to display them in webpage - tested 16.08 / 10:00 working
 //==============================================================================
 function render(item) {
 	if (item.phoneNumber == undefined && item.date == undefined) {
@@ -129,6 +129,10 @@ function render(item) {
 	} else {
 		$(".event").append(item.display());
 	}
+}
+
+function renderAll(item) {
+	$("#all").append(item.display());
 }
 
 $(document).ready(renderListOriginal.forEach(render));
@@ -149,6 +153,11 @@ function sortDescending(a,b) {
 	return new Date(b.timestamp) - new Date(a.timestamp);
 };
 
+function showPlacesOnly() {
+
+
+
+}
 //==============================================================================
 // function on SEARCH button to focus(scroll to) particular section
 //==============================================================================
@@ -158,28 +167,62 @@ $("#search-button").click(function(e){
 	window.location.hash = `#${focusTarget}`;
 })
 
+
+//==============================================================================
+// function to clean content befor new rendering
+//==============================================================================
+function clean() {
+	$(".initial-show, .initial-show-header").show();
+	$(".initial-show").empty();
+	$(".initial-hide").hide();
+}
 //==============================================================================
 // selector for triggering sorting function ascend / descend
 // selector is checked upon page loading an renders page based on default selector
 // initial selector is all and rendering is done based on initial renderList order
 //==============================================================================
+var displaySelector = $("#selector");
 
-$("#sorting-selector").change(sort);
+displaySelector.change(renderOption);
 
-function sort() {
-	if ($("#sorting-selector").val() == "asc") {
+function renderOption() {
+	if (displaySelector.val() == "asc") {
 		renderList.sort(sortAscending);
-		$(".place, .restaurant, .event").empty();
+		$(".initial-show, .initial-show-header").show();
+		$(".initial-show").empty();
+		$(".initial-hide").hide();
 		renderList.forEach(render);
-	} else if ($("#sorting-selector").val() == "desc") {
+
+	} else if (displaySelector.val() == "desc") {
 		renderList.sort(sortDescending);
-		$(".place, .restaurant, .event").empty();
+		$(".initial-show, .initial-show-header").show();
+		$(".initial-show").empty();
+		$(".initial-hide").hide();
 		renderList.forEach(render);
+
+	} else if (displaySelector.val() == "a-z") {
+		renderList.sort(sortAlphabetically);
+		$(".initial-show, .initial-show-header").hide();
+		$(".initial-hide").show();
+		$("#all").empty();
+		renderList.forEach(renderAll);
+
 	} else {
 		$(".place, .restaurant, .event").empty();
-		renderListInitial.forEach(render);
+		renderListOriginal.forEach(render);
+		console.log(renderListOriginal);
 	}
 }
+
+
+
+						// <option value="all">Show entries as...</option>
+						// <option value="asc">...oldest first</option>
+						// <option value="desc">...newest first</option>
+						// <option value="a-z">...A-Z</option>
+						// <option value="places">...only Places</option>
+						// <option value="restaurants">...only Restaurants</option>
+						// <option value="events">...only Events</option>
 
 //===================================================================
 // function to create random date for each object
