@@ -1,7 +1,12 @@
+//=======================================================================================================
+// array to contain all created objects, that will be rendered with loop
+//=======================================================================================================
+
 var renderList = [];
-//===================================================================
-// constructor for basic class Location + 1 instance testing created
-//===================================================================
+
+//=======================================================================================================
+// constructor for basic class LOCATION
+//=======================================================================================================
 class Location {
 	constructor(name, city, zipCode, address, image, timestamp) {
 		  this.name = name;
@@ -19,10 +24,10 @@ class Location {
 	display() {
 		return `<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="col-border">
-				<img class="img-fluid img-thumbnail col-border-thumbnail" src="${this.teaserImage}">
+				<img class="img-fluid img-thumbnail d-none d-md-block" src="${this.teaserImage}">
 				<h4 class="">${this.name}</h4>
 				<p class="">Created: ${this.timestamp}</p>
-				<div class="text-container">
+				<div class="text-container d-none d-md-block">
 					<p class="">${this.showAddress()}</p>
 				</div>
 			</div>	
@@ -30,9 +35,9 @@ class Location {
 	}
 }
 
-//====================================================
-// class Restaurant  + 1 instance created for testing
-//====================================================
+//=======================================================================================================
+// constructor for class Restaurant 
+//=======================================================================================================
 class Restaurant extends Location {
 	constructor(name, city, zipCode, address, image, timestamp, phone, cusine, webPage) {
 		  super(name, city, zipCode, address, image, timestamp);
@@ -47,10 +52,10 @@ class Restaurant extends Location {
 		return `
 <div class="col-12 col-md-6 col-lg-3 p-2">
 	<div class="col-border">
-		<img class="img-fluid img-thumbnail col-border-thumbnail" src="${this.teaserImage}">
+		<img class="img-fluid img-thumbnail d-none d-md-block" src="${this.teaserImage}">
 		<h4 class="">${this.name}</h4>
 		<p class="">Created: ${this.timestamp}</p>
-		<div class="text-container">
+		<div class="text-container d-none d-md-block">
 			<p class="">${this.showAddress()}</p>
 			<p class="">${this.phoneNumber}</p>
 			<p class="">${this.cusineType}</p>
@@ -61,9 +66,9 @@ class Restaurant extends Location {
 	}
 }
 
-//===============================================
-// class EVENT  + 1 instance created for testing
-//===============================================
+//=======================================================================================================
+// constructor for class EVENT 
+//=======================================================================================================
 class Event extends Location {
 	constructor(name, city, zipCode, address, image, timestamp, date, time, ticketPrice) {
 		  super(name, city, zipCode, address, image, timestamp);
@@ -77,10 +82,10 @@ class Event extends Location {
 	display() {
 		return `<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="col-border">
-				<img class="img-fluid img-thumbnail col-border-thumbnail" src="${this.teaserImage}">
+				<img class="img-fluid img-thumbnail d-none d-md-block" src="${this.teaserImage}">
 				<h4 class="">${this.name}</h4>
 				<p class="">Created: ${this.timestamp}</p>
-				<div class="text-container">
+				<div class="text-container d-none d-md-block">
 					<p class="">${this.showAddress()}</p>
 					<p class="">${this.date}</p>
 					<p class="">${this.time}</p>
@@ -91,10 +96,10 @@ class Event extends Location {
 	}
 }
 
-//===========================================================================
+//=======================================================================================================
 // array of object, created using the class constructors in separate files
-//===========================================================================
-var randomList = [
+//=======================================================================================================
+renderList = [
 	new Location("bLocation1", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 12 2012 16:00`),
 	new Location("fLocation2", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 15 2012 10:00`),
 	new Location("aLocation3", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 03 2012 10:00`),
@@ -109,8 +114,7 @@ var randomList = [
 	new Event("aEvent3", "City", "PLZ", "Address", "img/test_zoo.jpg", `Jun 12 2018 12:00`, "eventDate", "eventTime", "price")
 ];
 
-// var renderList = randomList.concat(placesList);
-
+console.log(renderList);
 //==============================================================================
 // function for rendering the objects from the array to display them in webpage - tested 16.08 / 10:00 working
 //==============================================================================
