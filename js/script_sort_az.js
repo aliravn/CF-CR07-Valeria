@@ -7,4 +7,3 @@ renderList.sort(function(a,b) {
 });
 renderList.forEach(render) // rendering objects in new order
 
-console.log($("#test").val());

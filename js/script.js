@@ -140,7 +140,7 @@ function render(item) {
 // sorting functions (ascend, descend, a-z) and call for render function are in separate files
 // otherwise they interfer with one another and/or need a separate trigger to separate the function scopes
 //==============================================================================
-console.log($("#test").val());
+
 
 //==============================================================================
 // function on SEARCH button to focus(scroll to) particular section
@@ -152,6 +152,20 @@ $("#search-button").click(function(e){
 })
 
 
+// $("#sorting-selector").change(sort);
+
+
+function sortAlphabetically(a,b) {
+	return (a.name).localeCompare(b.name);
+};
+
+function sortAscending(a,b) {
+	return new Date(a.timestamp) - new Date(b.timestamp);
+};
+
+function sortDescending(a,b) {
+	return new Date(b.timestamp) - new Date(a.timestamp);
+};
 
 
 
