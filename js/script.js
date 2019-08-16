@@ -47,9 +47,9 @@ function render(item) {
 //========================
 // sorting functions - tested both 16.08. / 10:40 working
 //========================
-var renderListAscend = renderList.slice(0); // clone original array before it is sorted
-var renderListDescend = renderList.slice(0);
-
+// var renderListAscend = renderList.slice(0); // clone original array before it is sorted
+// var renderListDescend = renderList.slice(0);
+// var renderListAtoZ = renderList.slice(0);
 // renderListDescend.sort(function(a,b) { //descending order
 // 	return new Date(b.timestamp) - new Date(a.timestamp);
 // });

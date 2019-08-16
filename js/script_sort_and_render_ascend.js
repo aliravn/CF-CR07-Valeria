@@ -1,7 +1,7 @@
 //=================================================================
-// sorting in ascending order and rendering
+// sorting in ascending order and rendering (oldest posts first) - tested 16.08./ 11:20 -working
 //==================================================================
-renderListAscend.sort(function(a,b) { // sorting in ascending order
+renderList.sort(function(a,b) { // sorting in ascending order
 	return new Date(a.timestamp) - new Date(b.timestamp);
 });
-renderListAscend.forEach(render) // rendering objects in new order
+renderList.forEach(render) // rendering objects in new order
