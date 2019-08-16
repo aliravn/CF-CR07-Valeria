@@ -94,14 +94,14 @@ class Event extends Location {
 // array of objects, created using the class constructors 
 //=======================================================================================================
 var renderList = [
-	new Location("Hundertwasser House", "Vienna", "1030", "Kegelgasse 36-38", "img/place_hundertwasserhaus.jpg", `Mar 06 2012 16:00`),
-	new Location("Sagrada Familia", "Barcelona", "8013", "Carrer de Mallorca, 401", "img/place_sagradafamilia.jpeg", `Mar 15 2012 10:00`),
-	new Location("Atomic Bomb Dome", "Hiroshima", "730-0051", "1-10 Otemachi", "img/place_atomicbombdome.jpg", `Mar 03 2012 10:00`),
-	new Location("Kiyomizu-dera Temple", "Kyoto", "605-0862", "294 Kiyomizu", "img/place_kiyomizu.jpg", `Mar 13 2012 10:00`),
-	new Location("Fushimi Inari-taisha Shrine", "Kyoto", "612-0882", "68 Fukakusa Yabunouchicho", "img/place_fushimiinari.jpg", `Mar 26 2012 10:00`),
-	new Location("Senso-ji Temple", "Tokyo", "111-0032", "2-3-1, Asakusa", "img/place_sensoji.jpg", `Mar 10 2012 10:00`),
-	new Location("Semuc Champey", "Lanquín", "G2MR+F8", "San Agustín", "img/place_semuc_champey.jpg", `Mar 24 2012 10:00`),
-	new Location("Winchester Mystery House", "San Jose", "CA 95128", "525 S Winchester Blvd", "img/place_winchester.jpg", `Mar 01 2012 10:00`),
+	new Location("Hundertwasser House", "Vienna", "1030", "Kegelgasse 36-38", "img/place_hundertwasserhaus.jpg", `02 Feb 2019 11:45`),
+	new Location("Sagrada Familia", "Barcelona", "8013", "Carrer de Mallorca, 401", "img/place_sagradafamilia.jpeg", `02 Feb 2019 11:45`),
+	new Location("Atomic Bomb Dome", "Hiroshima", "730-0051", "1-10 Otemachi", "img/place_atomicbombdome.jpg", `17 Jan 2019 16:45`),
+	new Location("Kiyomizu-dera Temple", "Kyoto", "605-0862", "294 Kiyomizu", "img/place_kiyomizu.jpg", `02 Jul 2019 11:45`),
+	new Location("Fushimi Inari-taisha Shrine", "Kyoto", "612-0882", "68 Fukakusa Yabunouchicho", "img/place_fushimiinari.jpg", `16 Mar 2018 11:45`),
+	new Location("Senso-ji Temple", "Tokyo", "111-0032", "2-3-1, Asakusa", "img/place_sensoji.jpg", `02 Jan 2015 11:45`),
+	new Location("Semuc Champey", "Lanquín", "G2MR+F8", "San Agustín", "img/place_semuc_champey.jpg", `22 May 2019 15:45`),
+	new Location("Winchester Mystery House", "San Jose", "CA 95128", "525 S Winchester Blvd", "img/place_winchester.jpg", `02 Feb 2019 11:45`),
 	new Restaurant("Donburi", "Vienna", "1020", "Lassallestraße 6", "img/rest_asian.jpg", `May 21 2010 15:00`, "+43 1 7200034", "asian", "www.donburiasiacuisine.at"),
 	new Restaurant("MAREDO", "Vienna", "1010", "Opernring 3/5", "img/rest_maredo.jpg", `May 05 2010 15:00`, "+43 1 5867722", "steakhouse", "www.maredo.at"),
 	new Restaurant("Vapiano", "Vienna", "1100", "Triester Straße 64", "img/rest_vapiano.jpg", `May 30 2010 15:00`, "+43 1 6008282", "italian", "www.mjam.net"),
@@ -223,13 +223,14 @@ function renderOption() {
 }
 
 //===================================================================
-// function to create random date for each object
+// function to create random date to be a "created" property of each object
 //===================================================================
-// var start = new Date(2015, 0, 1); // year, month (as index), date
-// var end = new Date(); // current date
-// function randomDate(start, end) {
-//   return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-//   console.log(randomDate);
-//   return `${randomDate.getDate()}.${randomDate.getMonth()+1}.${randomDate.getFullYear()} ${randomDate.getHours()}:${randomDate.getMinutes()}`;
-// }
-// console.log(randomDate(start, end));
+var start = new Date(2015, 0, 1); // year, month (as index), date
+var end = new Date(); // current date
+function createRandomDate(start, end) {
+	var d = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+	var str = d.toUTCString();
+	var createdDate = str.slice(5,22);
+	return createdDate;
+}
+console.log(createRandomDate(start, end));
