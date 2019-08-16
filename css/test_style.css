@@ -49,9 +49,6 @@ footer {
     width: 60px;
     height: 40px; }
 
-  img, .text-container {
-    display: none; }
-
   .col-border {
     border: none;
     padding: 0;
