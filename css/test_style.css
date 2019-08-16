@@ -25,7 +25,9 @@ body {
   padding-left: 1rem; }
 
 .img-thumbnail {
-  border-radius: 0.5vw 2vw; }
+  border-radius: 0.5vw 2vw;
+  background-color: #61605d;
+  box-shadow: 2px 2px 3px white, -2px -2px 3px white; }
 
 .row {
   background-color: grey;
