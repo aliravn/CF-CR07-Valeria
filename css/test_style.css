@@ -38,7 +38,9 @@ h1, h4, .text-container > p {
   margin: 0; }
 
 h4 {
-  margin-top: 0.5rem; }
+  margin-top: 0.5rem;
+  font-size: 1.22rem;
+  font-weight: bold; }
 
 footer {
   color: #70f17c;
