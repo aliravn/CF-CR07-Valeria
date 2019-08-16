@@ -20,14 +20,6 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-<!-- 				<li class="nav-item active dropdown">
-					<a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a class="dropdown-item" href="index_desc.html">New posts first</a>
-						<a class="dropdown-item" href="index_asc.html">Old posts first</a>
-						<a class="dropdown-item" href="index_all_a_to_z.html">A >> Z</a>
-					</div>
-				</li> -->
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -35,6 +27,17 @@
 						<a class="dropdown-item" href="#">Link 2</a>
 						<a class="dropdown-item" href="#">Link 3</a>
 					</div>
+				</li>
+				<li class="nav-item dropdown" id="sorting-selector">
+					<select class="custom-select">
+						<option value="all">Show entries as...</option>
+						<option value="asc">...oldest first</option>
+						<option value="desc">...newest first</option>
+						<option value="a-z">...A-Z</option>
+						<option value="places">...only Places</option>
+						<option value="restaurants">...only Restaurants</option>
+						<option value="events">...only Events</option>
+					</select>
 				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
@@ -46,19 +49,23 @@
 
 
 	<div class="container-fluid">
-		<h1 class="row section-header">Places</h1>
-		<section class="row place" id="places">
+		<h1 class="row section-header initial-show">Places</h1>
+		<section class="row place initial-show" id="places">
 		<!-- HERE LOCATION OBJECTS FROM JS WILL BE RENDERED -->
 		</section>
 
-		<h1 class="row section-header">Restaurants</h1>
-		<section class="row restaurant" id="restaurants">
+		<h1 class="row section-header initial-show">Restaurants</h1>
+		<section class="row restaurant initial-show" id="restaurants">
 		<!-- HERE RESTAURANT OBJECTS FROM JS WILL BE RENDERED -->
 		</section>
 
-		<h1 class="row section-header">Events</h1>
-		<section class="row event" id="events">
+		<h1 class="row section-header initial-show">Events</h1>
+		<section class="row event initial-show" id="events">
 		<!-- HERE EVENT OBJECTS FROM JS WILL BE RENDERED -->
+		</section>
+		<h1 class="row section-header initial-hide" id="">All Places (A-Z)</h1>
+		<section class="row initial-hide">
+		<!-- HERE LOCATION OBJECTS FROM JS WILL BE RENDERED -->
 		</section>
 	</div>
 

@@ -132,6 +132,7 @@ function render(item) {
 }
 
 $(document).ready(renderListOriginal.forEach(render));
+$(".initial-hide").hide();
 //==============================================================================
 // sorting functions (ascend, descend, a-z) 
 //==============================================================================
@@ -157,11 +158,28 @@ $("#search-button").click(function(e){
 	window.location.hash = `#${focusTarget}`;
 })
 
+//==============================================================================
+// selector for triggering sorting function ascend / descend
+// selector is checked upon page loading an renders page based on default selector
+// initial selector is all and rendering is done based on initial renderList order
+//==============================================================================
 
+$("#sorting-selector").change(sort);
 
-
-
-
+function sort() {
+	if ($("#sorting-selector").val() == "asc") {
+		renderList.sort(sortAscending);
+		$(".place, .restaurant, .event").empty();
+		renderList.forEach(render);
+	} else if ($("#sorting-selector").val() == "desc") {
+		renderList.sort(sortDescending);
+		$(".place, .restaurant, .event").empty();
+		renderList.forEach(render);
+	} else {
+		$(".place, .restaurant, .event").empty();
+		renderListInitial.forEach(render);
+	}
+}
 
 //===================================================================
 // function to create random date for each object
