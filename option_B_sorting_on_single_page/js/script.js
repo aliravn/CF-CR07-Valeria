@@ -188,16 +188,12 @@ displaySelector.change(renderOption);
 function renderOption() {
 	if (displaySelector.val() == "asc") {
 		renderList.sort(sortAscending);
-		$(".initial-show, .initial-show-header").show();
-		$(".initial-show").empty();
-		$(".initial-hide").hide();
+		clean();
 		renderList.forEach(render);
 
 	} else if (displaySelector.val() == "desc") {
 		renderList.sort(sortDescending);
-		$(".initial-show, .initial-show-header").show();
-		$(".initial-show").empty();
-		$(".initial-hide").hide();
+		clean();
 		renderList.forEach(render);
 
 	} else if (displaySelector.val() == "a-z") {
@@ -220,9 +216,7 @@ function renderOption() {
 		$("#restaurants, .restaurants-header, #places, .places-header, .initial-hide").hide();
 
 	} else {
-		$(".initial-show, .initial-show-header").show();
-		$(".initial-show").empty();
-		$(".initial-hide").hide();
+		clean();
 		renderListOriginal.forEach(render);
 	}
 		
