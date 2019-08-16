@@ -15,18 +15,18 @@
 // array of object, created using the class constructors in separate files
 //===========================================================================
 var renderList = [
-	new Location("Location1", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 12 2012 16:00`),
-	new Location("Location2", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 15 2012 10:00`),
-	new Location("Location3", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 03 2012 10:00`),
-	new Location("Location4", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 12 2012 10:00`),
-	new Restaurant("Restaurant1", "City", "PLZ", "Address", "img/test_rest_sixta.png", `May 21 2010 15:00`, "phoneNumber", "cusineType", "webPage"),
-	new Restaurant("Restaurant2", "City", "PLZ", "Address", "img/test_rest_sixta.png", `May 05 2010 15:00`, "phoneNumber", "cusineType", "webPage"),
-	new Restaurant("Restaurant3", "City", "PLZ", "Address", "img/test_rest_sixta.png", `May 30 2010 15:00`, "phoneNumber", "cusineType", "webPage"),
-	new Restaurant("Restaurant4", "City", "PLZ", "Address", "img/test_rest_sixta.png", `May 21 2010 10:00`, "phoneNumber", "cusineType", "webPage"),
-	new Event("Event1", "City", "PLZ", "Address", "img/test_zoo.jpg", `Feb 05 2018 12:00`, "eventDate", "eventTime", "price"),
-	new Event("Event2", "City", "PLZ", "Address", "img/test_zoo.jpg", `Jan 09 2018 12:00`, "eventDate", "eventTime", "price"),
-	new Event("Event3", "City", "PLZ", "Address", "img/test_zoo.jpg", `Jun 12 2018 12:00`, "eventDate", "eventTime", "price"),
-	new Event("Event4", "City", "PLZ", "Address", "img/test_zoo.jpg", `Dec 21 2016 12:00`, "eventDate", "eventTime", "price")
+	new Location("bLocation1", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 12 2012 16:00`),
+	new Location("fLocation2", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 15 2012 10:00`),
+	new Location("aLocation3", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 03 2012 10:00`),
+	new Location("zLocation4", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 12 2012 10:00`),
+	new Restaurant("rRestaurant1", "City", "PLZ", "Address", "img/test_rest_sixta.png", `May 21 2010 15:00`, "phoneNumber", "cusineType", "webPage"),
+	new Restaurant("tRestaurant2", "City", "PLZ", "Address", "img/test_rest_sixta.png", `May 05 2010 15:00`, "phoneNumber", "cusineType", "webPage"),
+	new Restaurant("dRestaurant3", "City", "PLZ", "Address", "img/test_rest_sixta.png", `May 30 2010 15:00`, "phoneNumber", "cusineType", "webPage"),
+	new Restaurant("sRestaurant4", "City", "PLZ", "Address", "img/test_rest_sixta.png", `May 21 2010 10:00`, "phoneNumber", "cusineType", "webPage"),
+	new Event("hEvent1", "City", "PLZ", "Address", "img/test_zoo.jpg", `Feb 05 2018 12:00`, "eventDate", "eventTime", "price"),
+	new Event("iEvent2", "City", "PLZ", "Address", "img/test_zoo.jpg", `Jan 09 2018 12:00`, "eventDate", "eventTime", "price"),
+	new Event("aEvent3", "City", "PLZ", "Address", "img/test_zoo.jpg", `Jun 12 2018 12:00`, "eventDate", "eventTime", "price"),
+	new Event("zEvent4", "City", "PLZ", "Address", "img/test_zoo.jpg", `Dec 21 2016 12:00`, "eventDate", "eventTime", "price")
 ];
 
 //==============================================================================
