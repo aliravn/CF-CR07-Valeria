@@ -2,7 +2,7 @@
 // constructor for basic class LOCATION
 //=======================================================================================================
 class Location {
-	constructor(name, city, zipCode, address, image, timestamp) {
+	constructor(name, city, zipCode, address, image) {
 		  this.name = name;
 		  this.city = city;
 		  this.zipCode = zipCode;
@@ -33,8 +33,8 @@ class Location {
 // constructor for class Restaurant 
 //=======================================================================================================
 class Restaurant extends Location {
-	constructor(name, city, zipCode, address, image, timestamp, phone, cusine, webPage) {
-		  super(name, city, zipCode, address, image, timestamp);
+	constructor(name, city, zipCode, address, image, phone, cusine, webPage) {
+		  super(name, city, zipCode, address, image);
 		  this.phoneNumber = phone;
 		  this.cusineType = cusine;
 		  this.webPage = webPage;
@@ -64,8 +64,8 @@ class Restaurant extends Location {
 // constructor for class EVENT 
 //=======================================================================================================
 class Event extends Location {
-	constructor(name, city, zipCode, address, image, timestamp, date, time, ticketPrice) {
-		  super(name, city, zipCode, address, image, timestamp);
+	constructor(name, city, zipCode, address, image, date, time, ticketPrice) {
+		  super(name, city, zipCode, address, image);
 		  this.date = date;
 		  this.time = time;
 		  this.ticketPrice = ticketPrice;
@@ -94,26 +94,26 @@ class Event extends Location {
 // array of objects, created using the class constructors 
 //=======================================================================================================
 var renderList = [
-	new Location("Hundertwasser House", "Vienna", "1030", "Kegelgasse 36-38", "img/place_hundertwasserhaus.jpg", `02 Feb 2019 11:45`),
-	new Location("Sagrada Familia", "Barcelona", "8013", "Carrer de Mallorca, 401", "img/place_sagradafamilia.jpeg", `02 Feb 2019 11:45`),
-	new Location("Atomic Bomb Dome", "Hiroshima", "730-0051", "1-10 Otemachi", "img/place_atomicbombdome.jpg", `17 Jan 2019 16:45`),
-	new Location("Kiyomizu-dera Temple", "Kyoto", "605-0862", "294 Kiyomizu", "img/place_kiyomizu.jpg", `02 Jul 2019 11:45`),
-	new Location("Fushimi Inari-taisha Shrine", "Kyoto", "612-0882", "68 Fukakusa Yabunouchicho", "img/place_fushimiinari.jpg", `16 Mar 2018 11:45`),
-	new Location("Senso-ji Temple", "Tokyo", "111-0032", "2-3-1, Asakusa", "img/place_sensoji.jpg", `02 Jan 2015 11:45`),
-	new Location("Semuc Champey", "Lanquín", "G2MR+F8", "San Agustín", "img/place_semuc_champey.jpg", `22 May 2019 15:45`),
-	new Location("Winchester Mystery House", "San Jose", "CA 95128", "525 S Winchester Blvd", "img/place_winchester.jpg", `02 Feb 2019 11:45`),
-	new Restaurant("Donburi", "Vienna", "1020", "Lassallestraße 6", "img/rest_asian.jpg", `May 21 2010 15:00`, "+43 1 7200034", "asian", "www.donburiasiacuisine.at"),
-	new Restaurant("MAREDO", "Vienna", "1010", "Opernring 3/5", "img/rest_maredo.jpg", `May 05 2010 15:00`, "+43 1 5867722", "steakhouse", "www.maredo.at"),
-	new Restaurant("Vapiano", "Vienna", "1100", "Triester Straße 64", "img/rest_vapiano.jpg", `May 30 2010 15:00`, "+43 1 6008282", "italian", "www.mjam.net"),
-	new Restaurant("Sushi Cross", "Vienna", "1030", "Wien Mitte Mall", "img/rest_sushicross.jpg", `May 21 2010 10:00`, "+43 1 2121210", "asian", "www.sushi-cross.at"),
-	new Restaurant("el Gaucho", "Vienna", "1020", "Praterstrasse 1", "img/rest_elgaucho.jpg", `May 21 2010 10:00`, "+43 680 2365804", "steakhouse", "www.elgaucho.at"),
-	new Restaurant("Gasthaus Elsner", "Vienna", "1150", "Neumayrgasse 2", "img/rest_gasthaus.jpg", `May 21 2010 10:00`, "+43 1 4925596", "viennese", "www.mjam.net"),
-	new Event("BonJovi", "Moscow", "123456", "Olympic Stadium, Olimpiyskiy Prospekt, 16", "img/event_bonjovi.jpg", `Feb 05 2018 12:00`, "31.05.2019", "19:00", "75 EUR"),
-	new Event("Rammstein", "Vienna", "1020", "Ernst Happel Stadion Wien, Meiereistrasse 7", "img/event_rammstein.jpg", `Jan 09 2018 12:00`, "23.08.2019", "19:00", "101 EUR"),
-	new Event("Lindsey Stirling", "Vienna", "1110", "Bank Austria Halle Gasometer, Guglgasse 8", "img/event_stirling.jpg", `Jun 12 2018 12:00`, "16.09.2019", "20:00", "55 EUR"),
-	new Event("Deep Purple", "Klagenfurt", "9020", "Kärnten Halle - Messe Klagenfurt, Messeplatz 1", "img/event_deeppurple.jpg", `Jun 12 2018 12:00`, "01.12.2019", "18:00", "85 EUR"),
-	new Event("Cats musical", "Vienna", "1010", "Ronacher Theater, Seilerstätte 9", "img/event_cats.jpg", `Feb 05 2018 12:00`, "15.10.2019", "18:30", "45 EUR"),
-	new Event("Metallica", "Vienna", "1020", "Ernst Happel Stadion Wien, Meiereistrasse 7", "img/event_metallica.jpg", `Feb 05 2018 12:00`, "16.08.2019", "19:00", "150 EUR")
+	new Location("Hundertwasser House", "Vienna", "1030", "Kegelgasse 36-38", "img/place_hundertwasserhaus.jpg"),
+	new Location("Sagrada Familia", "Barcelona", "8013", "Carrer de Mallorca, 401", "img/place_sagradafamilia.jpeg"),
+	new Location("Atomic Bomb Dome", "Hiroshima", "730-0051", "1-10 Otemachi", "img/place_atomicbombdome.jpg"),
+	new Location("Kiyomizu-dera Temple", "Kyoto", "605-0862", "294 Kiyomizu", "img/place_kiyomizu.jpg"),
+	new Location("Fushimi Inari-taisha Shrine", "Kyoto", "612-0882", "68 Fukakusa Yabunouchicho", "img/place_fushimiinari.jpg"),
+	new Location("Senso-ji Temple", "Tokyo", "111-0032", "2-3-1, Asakusa", "img/place_sensoji.jpg"),
+	new Location("Semuc Champey", "Lanquín", "G2MR+F8", "San Agustín", "img/place_semuc_champey.jpg"),
+	new Location("Winchester Mystery House", "San Jose", "CA 95128", "525 S Winchester Blvd", "img/place_winchester.jpg"),
+	new Restaurant("Donburi", "Vienna", "1020", "Lassallestraße 6", "img/rest_asian.jpg", "+43 1 7200034", "asian", "www.donburiasiacuisine.at"),
+	new Restaurant("MAREDO", "Vienna", "1010", "Opernring 3/5", "img/rest_maredo.jpg", "+43 1 5867722", "steakhouse", "www.maredo.at"),
+	new Restaurant("Vapiano", "Vienna", "1100", "Triester Straße 64", "img/rest_vapiano.jpg", "+43 1 6008282", "italian", "www.mjam.net"),
+	new Restaurant("Sushi Cross", "Vienna", "1030", "Wien Mitte Mall", "img/rest_sushicross.jpg", "+43 1 2121210", "asian", "www.sushi-cross.at"),
+	new Restaurant("el Gaucho", "Vienna", "1020", "Praterstrasse 1", "img/rest_elgaucho.jpg", "+43 680 2365804", "steakhouse", "www.elgaucho.at"),
+	new Restaurant("Gasthaus Elsner", "Vienna", "1150", "Neumayrgasse 2", "img/rest_gasthaus.jpg", "+43 1 4925596", "viennese", "www.mjam.net"),
+	new Event("BonJovi", "Moscow", "123456", "Olympic Stadium, Olimpiyskiy Prospekt, 16", "img/event_bonjovi.jpg", "31.05.2019", "19:00", "75 EUR"),
+	new Event("Rammstein", "Vienna", "1020", "Ernst Happel Stadion Wien, Meiereistrasse 7", "img/event_rammstein.jpg", "23.08.2019", "19:00", "101 EUR"),
+	new Event("Lindsey Stirling", "Vienna", "1110", "Bank Austria Halle Gasometer, Guglgasse 8", "img/event_stirling.jpg", "16.09.2019", "20:00", "55 EUR"),
+	new Event("Deep Purple", "Klagenfurt", "9020", "Kärnten Halle - Messe Klagenfurt, Messeplatz 1", "img/event_deeppurple.jpg", "01.12.2019", "18:00", "85 EUR"),
+	new Event("Cats musical", "Vienna", "1010", "Ronacher Theater, Seilerstätte 9", "img/event_cats.jpg", "15.10.2019", "18:30", "45 EUR"),
+	new Event("Metallica", "Vienna", "1020", "Ernst Happel Stadion Wien, Meiereistrasse 7", "img/event_metallica.jpg", "16.08.2019", "19:00", "150 EUR")
 ];
 
 var renderListOriginal = renderList.slice(0); // clone original list to be able to display original order of objects after any sorting
