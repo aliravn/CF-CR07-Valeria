@@ -37,6 +37,9 @@ body {
 h1, h4, .text-container > p {
   margin: 0; }
 
+#logo {
+  cursor: pointer; }
+
 .text-container > p {
   font-size: 0.8rem; }
 
