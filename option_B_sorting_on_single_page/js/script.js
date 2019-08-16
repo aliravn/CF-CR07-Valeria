@@ -207,11 +207,22 @@ function renderOption() {
 		$("#all").empty();
 		renderList.forEach(renderAll);
 
+	} else if (displaySelector.val() == "places") {
+		
+
+	} else if (displaySelector.val() == "restaurants") {
+
+
+	} else if (displaySelector.val() == "events") {
+
+
 	} else {
-		$(".place, .restaurant, .event").empty();
+		$(".initial-show, .initial-show-header").show();
+		$(".initial-show").empty();
+		$(".initial-hide").hide();
 		renderListOriginal.forEach(render);
-		console.log(renderListOriginal);
 	}
+		
 }
 
 
