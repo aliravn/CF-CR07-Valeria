@@ -5,5 +5,6 @@
 // renderList.sort(function(a,b) { // sort array in descending order
 // 	return new Date(b.timestamp) - new Date(a.timestamp);
 // });
+
 renderList.sort(sortDescending);
-renderList.forEach(render) // rendering objects in new order
+renderList.forEach(render) 

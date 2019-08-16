@@ -1,10 +1,4 @@
 //=======================================================================================================
-// array to contain all created objects, that will be rendered with loop
-//=======================================================================================================
-
-var renderList = [];
-
-//=======================================================================================================
 // constructor for basic class LOCATION
 //=======================================================================================================
 class Location {
@@ -99,7 +93,7 @@ class Event extends Location {
 //=======================================================================================================
 // array of objects, created using the class constructors 
 //=======================================================================================================
-renderList = [
+var renderList = [
 	new Location("Hundertwasser House", "Vienna", "1030", "Kegelgasse 36-38", "img/place_hundertwasserhaus.jpg", `Mar 06 2012 16:00`),
 	new Location("Sagrada Familia", "Barcelona", "8013", "Carrer de Mallorca, 401", "img/place_sagradafamilia.jpeg", `Mar 15 2012 10:00`),
 	new Location("Atomic Bomb Dome", "Hiroshima", "730-0051", "1-10 Otemachi", "img/place_atomicbombdome.jpg", `Mar 03 2012 10:00`),
@@ -137,23 +131,10 @@ function render(item) {
 }
 
 //==============================================================================
-// sorting functions (ascend, descend, a-z) and call for render function are in separate files
+// sorting functions (ascend, descend, a-z) 
+// call for sorting and render function are in separate files = called upon page loading
 // otherwise they interfer with one another and/or need a separate trigger to separate the function scopes
 //==============================================================================
-
-
-//==============================================================================
-// function on SEARCH button to focus(scroll to) particular section
-//==============================================================================
-$("#search-button").click(function(e){
-	e.preventDefault();
-	var focusTarget = $("#search-field").val()
-	window.location.hash = `#${focusTarget}`;
-})
-
-
-// $("#sorting-selector").change(sort);
-
 
 function sortAlphabetically(a,b) {
 	return (a.name).localeCompare(b.name);
@@ -166,6 +147,17 @@ function sortAscending(a,b) {
 function sortDescending(a,b) {
 	return new Date(b.timestamp) - new Date(a.timestamp);
 };
+
+//==============================================================================
+// function on SEARCH button to focus(scroll to) particular section
+//==============================================================================
+$("#search-button").click(function(e){
+	e.preventDefault();
+	var focusTarget = $("#search-field").val()
+	window.location.hash = `#${focusTarget}`;
+})
+
+
 
 
 

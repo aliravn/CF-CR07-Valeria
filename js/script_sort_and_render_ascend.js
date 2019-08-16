@@ -5,7 +5,7 @@
 // 	return new Date(a.timestamp) - new Date(b.timestamp);
 // });
 renderList.sort(sortAscending);
-renderList.forEach(render) // rendering objects in new order
+renderList.forEach(render) 
 
 
 
