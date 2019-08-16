@@ -15,18 +15,18 @@
 // array of object, created using the above clss constructors
 //============================================================
 var renderList = [
-	new Location("Location1", "Vienna", "1010", "Karlsplatz 1", "img/test_Karlsplatz.jpg", `Mar 12 2012 10:00`),
-	new Location("Location2", "Vienna", "1010", "Karlsplatz 1", "img/test_Karlsplatz.jpg", `Mar 12 2012 10:00`),
-	new Location("Location3", "Vienna", "1010", "Karlsplatz 1", "img/test_Karlsplatz.jpg", `Mar 12 2012 10:00`),
-	new Location("Location4", "Vienna", "1010", "Karlsplatz 1", "img/test_Karlsplatz.jpg", `Mar 12 2012 10:00`),
-	new Restaurant("Restaurant1", "Bagdad", "1150", "Kurbatra 3", "img/test_rest_sixta.png", `May 21 2010 15:00`, "phoneNumber", "cusineType", "webPage"),
-	new Restaurant("Restaurant2", "Bagdad", "1150", "Kurbatra 3", "img/test_rest_sixta.png", `May 21 2010 15:00`, "phoneNumber", "cusineType", "webPage"),
-	new Restaurant("Restaurant3", "Bagdad", "1150", "Kurbatra 3", "img/test_rest_sixta.png", `May 21 2010 15:00`, "phoneNumber", "cusineType", "webPage"),
-	new Restaurant("Restaurant4", "Bagdad", "1150", "Kurbatra 3", "img/test_rest_sixta.png", `May 21 2010 15:00`, "phoneNumber", "cusineType", "webPage"),
-	new Event("Event1", "Ernst Happel Stadion", "1020", "Stadionplatz 1", "img/test_zoo.jpg", `Jan 21 2019 12:00`, "17.07.2019", "19:00", "80 EUR"),
-	new Event("Event2", "Ernst Happel Stadion", "1020", "Stadionplatz 1", "img/test_zoo.jpg", `Jan 21 2019 12:00`, "17.07.2019", "19:00", "80 EUR"),
-	new Event("Event3", "Ernst Happel Stadion", "1020", "Stadionplatz 1", "img/test_zoo.jpg", `Jan 21 2019 12:00`, "17.07.2019", "19:00", "80 EUR"),
-	new Event("Event4", "Ernst Happel Stadion", "1020", "Stadionplatz 1", "img/test_zoo.jpg", `Jan 21 2019 12:00`, "17.07.2019", "19:00", "80 EUR")
+	new Location("Location1", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 12 2012 10:00`),
+	new Location("Location2", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 12 2012 10:00`),
+	new Location("Location3", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 12 2012 10:00`),
+	new Location("Location4", "City", "PLZ", "Address", "img/test_Karlsplatz.jpg", `Mar 12 2012 10:00`),
+	new Restaurant("Restaurant1", "City", "PLZ", "Address", "img/test_rest_sixta.png", `May 21 2010 15:00`, "phoneNumber", "cusineType", "webPage"),
+	new Restaurant("Restaurant2", "City", "PLZ", "Address", "img/test_rest_sixta.png", `May 21 2010 15:00`, "phoneNumber", "cusineType", "webPage"),
+	new Restaurant("Restaurant3", "City", "PLZ", "Address", "img/test_rest_sixta.png", `May 21 2010 15:00`, "phoneNumber", "cusineType", "webPage"),
+	new Restaurant("Restaurant4", "City", "PLZ", "Address", "img/test_rest_sixta.png", `May 21 2010 15:00`, "phoneNumber", "cusineType", "webPage"),
+	new Event("Event1", "City", "PLZ", "Address", "img/test_zoo.jpg", `Jan 21 2019 12:00`, "eventDate", "eventTime", "price"),
+	new Event("Event2", "City", "PLZ", "Address", "img/test_zoo.jpg", `Jan 21 2019 12:00`, "eventDate", "eventTime", "price"),
+	new Event("Event3", "City", "PLZ", "Address", "img/test_zoo.jpg", `Jan 21 2019 12:00`, "eventDate", "eventTime", "price"),
+	new Event("Event4", "City", "PLZ", "Address", "img/test_zoo.jpg", `Jan 21 2019 12:00`, "eventDate", "eventTime", "price")
 ];
 // console.log(renderList);
 
@@ -34,7 +34,14 @@ var renderList = [
 // function for rendering the objects from the array to display them in webpage
 //==============================================================================
 renderList.forEach(function(item) {
-	$("#event").append(item.display());
+	console.log(item.date, item.phoneNumber);
+	if (item.phoneNumber == undefined && item.date == undefined) {
+		$("#place").append(item.display());
+	} else if (item.date == undefined) {
+		$("#restaurant").append(item.display());
+	} else {
+		$("#event").append(item.display());
+	}
 });
 
 //========================
