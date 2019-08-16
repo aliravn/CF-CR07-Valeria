@@ -1,5 +1,4 @@
 body {
-  background-color: darkgrey;
   margin: 0 auto;
   color: #000000; }
 
@@ -23,11 +22,7 @@ body {
     color: #e0d5d5; }
 
 .col-border-thumbnail {
-  border-radius: 1vw 3vw; }
-
-footer {
-  color: #70f17c;
-  font-weight: bold; }
+  border-radius: 1vw 2vw; }
 
 .row {
   background-color: grey;
@@ -39,8 +34,9 @@ h4, .text-container > p {
 h4 {
   margin-top: 0.5rem; }
 
-.nav-link {
-  color: #70f17c; }
+footer {
+  color: #70f17c;
+  font-weight: bold; }
 
 @media (max-width: 767px) {
   img {
