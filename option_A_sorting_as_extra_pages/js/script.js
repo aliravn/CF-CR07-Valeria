@@ -8,7 +8,7 @@ class Location {
 		  this.zipCode = zipCode;
 		  this.address = address;    
 		  this.teaserImage = image;
-		  this.timestamp = timestamp
+		  this.timestamp = timestamp;
 		  // renderList.push(this);
 	}
 
@@ -116,7 +116,6 @@ var renderList = [
 	new Event("Metallica", "Vienna", "1020", "Ernst Happel Stadion Wien, Meiereistrasse 7", "img/event_metallica.jpg", `30 May 2018 06:33`, "16.08.2019", "19:00", "150 EUR")
 ];
 
-// console.log(renderList);
 //==============================================================================
 // function for rendering the objects from the array to display them in webpage - tested 16.08 / 10:00 working
 //==============================================================================
@@ -164,13 +163,6 @@ $("#search-button").click(function(e){
 
 
 //===================================================================
-// function to create random date for each object
+// function to create random date for each object is not applicable,
+// becuse dates will be randomly generated each time the page reloads
 //===================================================================
-// var start = new Date(2015, 0, 1); // year, month (as index), date
-// var end = new Date(); // current date
-// function randomDate(start, end) {
-//   return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-//   console.log(randomDate);
-//   return `${randomDate.getDate()}.${randomDate.getMonth()+1}.${randomDate.getFullYear()} ${randomDate.getHours()}:${randomDate.getMinutes()}`;
-// }
-// console.log(randomDate(start, end));
