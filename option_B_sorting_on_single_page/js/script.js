@@ -23,6 +23,7 @@ class Location {
 				<p>Created: ${this.timestamp}</p>
 				<div class="text-container d-none d-md-block">
 					<p>${this.showAddress()}</p>
+					<p></p>
 				</div>
 			</div>	
 		</div>`
@@ -43,20 +44,11 @@ class Restaurant extends Location {
 		return `${super.showAddress()}`;
 	}
 	display() {
-		return `
-<div class="col-12 col-md-6 col-lg-3 p-2">
-	<div class="col-border col-border-blue">
-		<img class="img-fluid img-thumbnail d-none d-md-block" src="${this.teaserImage}">
-		<h4>${this.name}</h4>
-		<p>Created: ${this.timestamp}</p>
-		<div class="text-container d-none d-md-block">
-			<p>${this.showAddress()}</p>
-			<p>${this.phoneNumber}</p>
-			<p>${this.cusineType}</p>
-			<a class="web-link" href="https://${this.webPage}" target="_blank">${this.webPage}</a>
-		</div>
-	</div>
-</div>`
+		var htmlString = `${super.display()}`;
+		return htmlString.replace("<p></p>", 
+											`<p class="restaurant-color">${this.phoneNumber}</p>
+											<p>${this.cusineType}</p>
+											<a class="web-link" href="https://${this.webPage}" target="_blank">${this.webPage}</a>`);
 	}
 }
 
@@ -74,19 +66,11 @@ class Event extends Location {
 		return `${super.showAddress()}`;
 	}
 	display() {
-		return `<div class="col-12 col-md-6 col-lg-3 p-2">
-			<div class="col-border col-border-orange">
-				<img class="img-fluid img-thumbnail d-none d-md-block" src="${this.teaserImage}">
-				<h4>${this.name}</h4>
-				<p>Created: ${this.timestamp}</p>
-				<div class="text-container d-none d-md-block">
-					<p>${this.showAddress()}</p>
-					<p>${this.date}</p>
-					<p>${this.time}</p>
-					<p>${this.ticketPrice}</p>
-				</div>
-			</div>
-		</div>`
+		var htmlString = `${super.display()}`;
+		return htmlString.replace("<p></p>", 
+											`<p class="event-color">${this.date}</p>
+											<p>${this.time}</p>
+											<p>${this.ticketPrice}</p>`);
 	}
 }
 
@@ -126,13 +110,17 @@ function render(item) {
 		$(".place").append(item.display());
 	} else if (item.date == undefined) {
 		$(".restaurant").append(item.display());
+		$(".restaurant-color").closest(".col-border").addClass("col-border-blue");
 	} else {
 		$(".event").append(item.display());
+		$(".event-color").closest(".col-border").addClass("col-border-orange");
 	}
 }
 
 function renderAll(item) {
 	$("#all").append(item.display());
+	$(".restaurant-color").closest(".col-border").addClass("col-border-blue");
+	$(".event-color").closest(".col-border").addClass("col-border-orange");
 }
 
 $(document).ready(renderListOriginal.forEach(render));
