@@ -131,11 +131,6 @@ function sortDescending(a,b) {
 	return new Date(b.timestamp) - new Date(a.timestamp);
 };
 
-function showPlacesOnly() {
-
-
-
-}
 //==============================================================================
 // function on SEARCH button to focus(scroll to) particular section
 //==============================================================================
