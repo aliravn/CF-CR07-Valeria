@@ -7,7 +7,7 @@ body {
   color: #70f17c;
   font-weight: bold; }
 
-.navbar-brand > p {
+.navbar-brand > span {
   color: #70f17c;
   font-weight: bold;
   margin: 0; }
