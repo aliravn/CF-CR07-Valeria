@@ -46,7 +46,7 @@ class Restaurant extends Location {
 	display() {
 		var htmlString = `${super.display()}`;
 		return htmlString.replace("<p></p>", 
-											`<p>${this.phoneNumber}</p>
+											`<p class="restaurant-color">${this.phoneNumber}</p>
 											<p>${this.cusineType}</p>
 											<a class="web-link" href="https://${this.webPage}" target="_blank">${this.webPage}</a>`);
 	}
@@ -69,7 +69,7 @@ class Event extends Location {
 	display() {
 		var htmlString = `${super.display()}`;
 		return htmlString.replace("<p></p>", 
-											`<p>${this.date}</p>
+											`<p class="event-color">${this.date}</p>
 											<p>${this.time}</p>
 											<p>${this.ticketPrice}</p>`);
 	}
@@ -109,10 +109,10 @@ function render(item) {
 		$(".place").append(item.display());
 	} else if (item.date == undefined) {
 		$(".restaurant").append(item.display());
-		$(".restaurant").find(".col-border").addClass("col-border-blue");
+		$(".restaurant-color").closest(".col-border").addClass("col-border-blue");
 	} else {
 		$(".event").append(item.display());
-		$(".event").find(".col-border").addClass("col-border-orange");
+		$(".event-color").closest(".col-border").addClass("col-border-orange");
 	}
 }
 
