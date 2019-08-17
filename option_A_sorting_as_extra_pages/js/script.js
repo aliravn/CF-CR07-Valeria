@@ -23,6 +23,7 @@ class Location {
 				<p>Created: ${this.timestamp}</p>
 				<div class="text-container d-none d-md-block">
 					<p>${this.showAddress()}</p>
+					<p></p>
 				</div>
 			</div>	
 		</div>`
