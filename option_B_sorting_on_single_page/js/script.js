@@ -117,7 +117,7 @@ var renderList = [
 ];
 
 var renderListOriginal = renderList.slice(0); // clone original list to be able to display original order of objects after any sorting
-
+// console.log(renderListOriginal);
 //==============================================================================
 // functions for rendering the objects from the array to display them in webpage - tested 16.08 / 10:00 working
 //==============================================================================
