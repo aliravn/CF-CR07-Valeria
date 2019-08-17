@@ -19,10 +19,10 @@ class Location {
 		return `<div class="col-12 col-md-6 col-lg-3 p-2">
 			<div class="col-border">
 				<img class="img-fluid img-thumbnail d-none d-md-block" src="${this.teaserImage}">
-				<h4 class="">${this.name}</h4>
-				<p class="">Created: ${this.timestamp}</p>
+				<h4>${this.name}</h4>
+				<p>Created: ${this.timestamp}</p>
 				<div class="text-container d-none d-md-block">
-					<p class="">${this.showAddress()}</p>
+					<p>${this.showAddress()}</p>
 				</div>
 			</div>	
 		</div>`
@@ -43,22 +43,14 @@ class Restaurant extends Location {
 		return `${super.showAddress()}`;
 	}
 	display() {
-		return `
-<div class="col-12 col-md-6 col-lg-3 p-2">
-	<div class="col-border col-border-blue">
-		<img class="img-fluid img-thumbnail d-none d-md-block" src="${this.teaserImage}">
-		<h4 class="">${this.name}</h4>
-		<p class="">Created: ${this.timestamp}</p>
-		<div class="text-container d-none d-md-block">
-			<p class="">${this.showAddress()}</p>
-			<p class="">${this.phoneNumber}</p>
-			<p class="">${this.cusineType}</p>
-			<a class="web-link" href="https://${this.webPage}" target="_blank">${this.webPage}</a>
-		</div>
-	</div>
-</div>`
+		var htmlString = `${super.display()}`;
+		return htmlString.replace("<p></p>", 
+											`<p>${this.phoneNumber}</p>
+											<p>${this.cusineType}</p>
+											<a class="web-link" href="https://${this.webPage}" target="_blank">${this.webPage}</a>`);
 	}
 }
+
 
 //=======================================================================================================
 // constructor for class EVENT 
@@ -74,19 +66,11 @@ class Event extends Location {
 		return `${super.showAddress()}`;
 	}
 	display() {
-		return `<div class="col-12 col-md-6 col-lg-3 p-2">
-			<div class="col-border col-border-orange">
-				<img class="img-fluid img-thumbnail d-none d-md-block" src="${this.teaserImage}">
-				<h4 class="">${this.name}</h4>
-				<p class="">Created: ${this.timestamp}</p>
-				<div class="text-container d-none d-md-block">
-					<p class="">${this.showAddress()}</p>
-					<p class="">${this.date}</p>
-					<p class="">${this.time}</p>
-					<p class="">${this.ticketPrice}</p>
-				</div>
-			</div>
-		</div>`
+		var htmlString = `${super.display()}`;
+		return htmlString.replace("<p></p>", 
+											`<p>${this.date}</p>
+											<p>${this.time}</p>
+											<p>${this.ticketPrice}</p>`);
 	}
 }
 
@@ -124,8 +108,10 @@ function render(item) {
 		$(".place").append(item.display());
 	} else if (item.date == undefined) {
 		$(".restaurant").append(item.display());
+		$(".restaurant").find(".col-border").addClass("col-border-blue");
 	} else {
 		$(".event").append(item.display());
+		$(".event").find(".col-border").addClass("col-border-orange");
 	}
 }
 
