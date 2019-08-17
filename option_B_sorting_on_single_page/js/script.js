@@ -3,52 +3,49 @@
 //=======================================================================================================
 class Location {
 	constructor(name, city, zipCode, address, image) {
-		  this.name = name;
-		  this.city = city;
-		  this.zipCode = zipCode;
-		  this.address = address;    
-		  this.teaserImage = image;
-		  this.timestamp = createRandomDate(new Date(2017, 0, 1), new Date());
-		  // renderList.push(this);
+		this.name = name;
+		this.city = city;
+		this.zipCode = zipCode;
+		this.address = address;    
+		this.teaserImage = image;
+		this.timestamp = createRandomDate(new Date(2017, 0, 1), new Date());
+		this.container = `<div class="col-12 col-md-6 col-lg-3 p-2">
+							<div class="col-border">
+								<img class="img-fluid img-thumbnail d-none d-md-block" src="${this.teaserImage}">
+								<h4>${this.name}</h4>
+								<p>Created: ${this.timestamp}</p>
+								<div class="text-container d-none d-md-block">
+									<p>${this.showAddress()}</p>
+									<additionalcontent>
+								</div>
+							</div>	
+						</div>`			
 	}
 
 	showAddress() {
 		return `${this.address}, ${this.zipCode} ${this.city}`;
 	}
+
 	display() {
-		return `<div class="col-12 col-md-6 col-lg-3 p-2">
-			<div class="col-border">
-				<img class="img-fluid img-thumbnail d-none d-md-block" src="${this.teaserImage}">
-				<h4>${this.name}</h4>
-				<p>Created: ${this.timestamp}</p>
-				<div class="text-container d-none d-md-block">
-					<p>${this.showAddress()}</p>
-					<p></p>
-				</div>
-			</div>	
-		</div>`
+		return this.container;
 	}
 }
-
 //=======================================================================================================
 // constructor for class Restaurant 
 //=======================================================================================================
 class Restaurant extends Location {
 	constructor(name, city, zipCode, address, image, phone, cusine, webPage) {
-		  super(name, city, zipCode, address, image);
-		  this.phoneNumber = phone;
-		  this.cusineType = cusine;
-		  this.webPage = webPage;
+		super(name, city, zipCode, address, image);
+		this.phoneNumber = phone;
+		this.cusineType = cusine;
+		this.webPage = webPage;
+		this.additionalcontent = `<p class="restaurant-color">${this.phoneNumber}</p>
+									<p>${this.cusineType}</p>
+									<a class="web-link" href="https://${this.webPage}" target="_blank">${this.webPage}</a>`;
 	}
-	showAddress() {
-		return `${super.showAddress()}`;
-	}
+
 	display() {
-		var htmlString = `${super.display()}`;
-		return htmlString.replace("<p></p>", 
-											`<p class="restaurant-color">${this.phoneNumber}</p>
-											<p>${this.cusineType}</p>
-											<a class="web-link" href="https://${this.webPage}" target="_blank">${this.webPage}</a>`);
+		return super.display().replace("<additionalcontent>", this.additionalcontent).replace("col-border", "col-border col-border-blue");
 	}
 }
 
@@ -57,20 +54,17 @@ class Restaurant extends Location {
 //=======================================================================================================
 class Event extends Location {
 	constructor(name, city, zipCode, address, image, date, time, ticketPrice) {
-		  super(name, city, zipCode, address, image);
-		  this.date = date;
-		  this.time = time;
-		  this.ticketPrice = ticketPrice;
-	}
-	showAddress() {
-		return `${super.showAddress()}`;
-	}
-	display() {
-		var htmlString = `${super.display()}`;
-		return htmlString.replace("<p></p>", 
-											`<p class="event-color">${this.date}</p>
+		super(name, city, zipCode, address, image);
+		this.date = date;
+		this.time = time;
+		this.ticketPrice = ticketPrice;
+		this.additionalcontent = `<p class="event-color">${this.date}</p>
 											<p>${this.time}</p>
-											<p>${this.ticketPrice}</p>`);
+											<p>${this.ticketPrice}</p>`;
+	}
+
+	display() {
+		return super.display().replace("<additionalcontent>", this.additionalcontent).replace("col-border", "col-border col-border-orange");
 	}
 }
 
@@ -110,17 +104,13 @@ function render(item) {
 		$(".place").append(item.display());
 	} else if (item.date == undefined) {
 		$(".restaurant").append(item.display());
-		$(".restaurant-color").closest(".col-border").addClass("col-border-blue");
 	} else {
 		$(".event").append(item.display());
-		$(".event-color").closest(".col-border").addClass("col-border-orange");
 	}
 }
 
 function renderAll(item) {
 	$("#all").append(item.display());
-	$(".restaurant-color").closest(".col-border").addClass("col-border-blue");
-	$(".event-color").closest(".col-border").addClass("col-border-orange");
 }
 
 $(document).ready(renderListOriginal.forEach(render));
