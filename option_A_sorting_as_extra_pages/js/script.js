@@ -94,26 +94,26 @@ class Event extends Location {
 // array of objects, created using the class constructors 
 //=======================================================================================================
 var renderList = [
-	new Location("Hundertwasser House", "Vienna", "1030", "Kegelgasse 36-38", "img/place_hundertwasserhaus.jpg", `Mar 06 2012 16:00`),
-	new Location("Sagrada Familia", "Barcelona", "8013", "Carrer de Mallorca, 401", "img/place_sagradafamilia.jpeg", `Mar 15 2012 10:00`),
-	new Location("Atomic Bomb Dome", "Hiroshima", "730-0051", "1-10 Otemachi", "img/place_atomicbombdome.jpg", `Mar 03 2012 10:00`),
-	new Location("Kiyomizu-dera Temple", "Kyoto", "605-0862", "294 Kiyomizu", "img/place_kiyomizu.jpg", `Mar 13 2012 10:00`),
-	new Location("Fushimi Inari-taisha Shrine", "Kyoto", "612-0882", "68 Fukakusa Yabunouchicho", "img/place_fushimiinari.jpg", `Mar 26 2012 10:00`),
-	new Location("Senso-ji Temple", "Tokyo", "111-0032", "2-3-1, Asakusa", "img/place_sensoji.jpg", `Mar 10 2012 10:00`),
-	new Location("Semuc Champey", "Lanquín", "G2MR+F8", "San Agustín", "img/place_semuc_champey.jpg", `Mar 24 2012 10:00`),
-	new Location("Winchester Mystery House", "San Jose", "CA 95128", "525 S Winchester Blvd", "img/place_winchester.jpg", `Mar 01 2012 10:00`),
-	new Restaurant("Donburi", "Vienna", "1020", "Lassallestraße 6", "img/rest_asian.jpg", `May 21 2010 15:00`, "+43 1 7200034", "asian", "www.donburiasiacuisine.at"),
-	new Restaurant("MAREDO", "Vienna", "1010", "Opernring 3/5", "img/rest_maredo.jpg", `May 05 2010 15:00`, "+43 1 5867722", "steakhouse", "www.maredo.at"),
-	new Restaurant("Vapiano", "Vienna", "1100", "Triester Straße 64", "img/rest_vapiano.jpg", `May 30 2010 15:00`, "+43 1 6008282", "italian", "www.mjam.net"),
-	new Restaurant("Sushi Cross", "Vienna", "1030", "Wien Mitte Mall", "img/rest_sushicross.jpg", `May 21 2010 10:00`, "+43 1 2121210", "asian", "www.sushi-cross.at"),
-	new Restaurant("el Gaucho", "Vienna", "1020", "Praterstrasse 1", "img/rest_elgaucho.jpg", `May 21 2010 10:00`, "+43 680 2365804", "steakhouse", "www.elgaucho.at"),
-	new Restaurant("Gasthaus Elsner", "Vienna", "1150", "Neumayrgasse 2", "img/rest_gasthaus.jpg", `May 21 2010 10:00`, "+43 1 4925596", "viennese", "www.mjam.net"),
-	new Event("BonJovi", "Moscow", "123456", "Olympic Stadium, Olimpiyskiy Prospekt, 16", "img/event_bonjovi.jpg", `Feb 05 2018 12:00`, "31.05.2019", "19:00", "75 EUR"),
-	new Event("Rammstein", "Vienna", "1020", "Ernst Happel Stadion Wien, Meiereistrasse 7", "img/event_rammstein.jpg", `Jan 09 2018 12:00`, "23.08.2019", "19:00", "101 EUR"),
-	new Event("Lindsey Stirling", "Vienna", "1110", "Bank Austria Halle Gasometer, Guglgasse 8", "img/event_stirling.jpg", `Jun 12 2018 12:00`, "16.09.2019", "20:00", "55 EUR"),
-	new Event("Deep Purple", "Klagenfurt", "9020", "Kärnten Halle - Messe Klagenfurt, Messeplatz 1", "img/event_deeppurple.jpg", `Jun 12 2018 12:00`, "01.12.2019", "18:00", "85 EUR"),
-	new Event("Cats musical", "Vienna", "1010", "Ronacher Theater, Seilerstätte 9", "img/event_cats.jpg", `Feb 05 2018 12:00`, "15.10.2019", "18:30", "45 EUR"),
-	new Event("Metallica", "Vienna", "1020", "Ernst Happel Stadion Wien, Meiereistrasse 7", "img/event_metallica.jpg", `Feb 05 2018 12:00`, "16.08.2019", "19:00", "150 EUR")
+	new Location("Hundertwasser House", "Vienna", "1030", "Kegelgasse 36-38", "img/place_hundertwasserhaus.jpg", `06 Jan 2018 23:18`),
+	new Location("Sagrada Familia", "Barcelona", "8013", "Carrer de Mallorca, 401", "img/place_sagradafamilia.jpeg", `04 Jul 2017 02:18`),
+	new Location("Atomic Bomb Dome", "Hiroshima", "730-0051", "1-10 Otemachi", "img/place_atomicbombdome.jpg", `14 Nov 2018 05:24`),
+	new Location("Kiyomizu-dera Temple", "Kyoto", "605-0862", "294 Kiyomizu", "img/place_kiyomizu.jpg", `25 Feb 2018 02:10`),
+	new Location("Fushimi Inari-taisha Shrine", "Kyoto", "612-0882", "68 Fukakusa Yabunouchicho", "img/place_fushimiinari.jpg", `17 Jun 2019 10:47`),
+	new Location("Senso-ji Temple", "Tokyo", "111-0032", "2-3-1, Asakusa", "img/place_sensoji.jpg", `26 Jul 2019 01:21 debug`),
+	new Location("Semuc Champey", "Lanquín", "G2MR+F8", "San Agustín", "img/place_semuc_champey.jpg", `20 May 2018 21:03`),
+	new Location("Winchester Mystery House", "San Jose", "CA 95128", "525 S Winchester Blvd", "img/place_winchester.jpg", `02 Jul 2019 12:52`),
+	new Restaurant("Donburi", "Vienna", "1020", "Lassallestraße 6", "img/rest_asian.jpg", `19 Apr 2018 19:11`, "+43 1 7200034", "asian", "www.donburiasiacuisine.at"),
+	new Restaurant("MAREDO", "Vienna", "1010", "Opernring 3/5", "img/rest_maredo.jpg", `16 Apr 2018 22:13`, "+43 1 5867722", "steakhouse", "www.maredo.at"),
+	new Restaurant("Vapiano", "Vienna", "1100", "Triester Straße 64", "img/rest_vapiano.jpg", `10 Dec 2018 20:01`, "+43 1 6008282", "italian", "www.mjam.net"),
+	new Restaurant("Sushi Cross", "Vienna", "1030", "Wien Mitte Mall", "img/rest_sushicross.jpg", `04 Aug 2019 13:22`, "+43 1 2121210", "asian", "www.sushi-cross.at"),
+	new Restaurant("el Gaucho", "Vienna", "1020", "Praterstrasse 1", "img/rest_elgaucho.jpg", `12 Jan 2019 06:26`, "+43 680 2365804", "steakhouse", "www.elgaucho.at"),
+	new Restaurant("Gasthaus Elsner", "Vienna", "1150", "Neumayrgasse 2", "img/rest_gasthaus.jpg", `21 Jun 2018 14:25`, "+43 1 4925596", "viennese", "www.mjam.net"),
+	new Event("BonJovi", "Moscow", "123456", "Olympic Stadium, Olimpiyskiy Prospekt, 16", "img/event_bonjovi.jpg", `26 Jan 2018 12:34`, "31.05.2019", "19:00", "75 EUR"),
+	new Event("Rammstein", "Vienna", "1020", "Ernst Happel Stadion Wien, Meiereistrasse 7", "img/event_rammstein.jpg", `20 Oct 2018 22:52`, "23.08.2019", "19:00", "101 EUR"),
+	new Event("Lindsey Stirling", "Vienna", "1110", "Bank Austria Halle Gasometer, Guglgasse 8", "img/event_stirling.jpg", `06 Apr 2018 13:36`, "16.09.2019", "20:00", "55 EUR"),
+	new Event("Deep Purple", "Klagenfurt", "9020", "Kärnten Halle - Messe Klagenfurt, Messeplatz 1", "img/event_deeppurple.jpg", `20 Mar 2019 07:53`, "01.12.2019", "18:00", "85 EUR"),
+	new Event("Cats musical", "Vienna", "1010", "Ronacher Theater, Seilerstätte 9", "img/event_cats.jpg", `27 Dec 2018 06:26`, "15.10.2019", "18:30", "45 EUR"),
+	new Event("Metallica", "Vienna", "1020", "Ernst Happel Stadion Wien, Meiereistrasse 7", "img/event_metallica.jpg", `30 May 2018 06:33`, "16.08.2019", "19:00", "150 EUR")
 ];
 
 // console.log(renderList);
