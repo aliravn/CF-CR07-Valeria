@@ -24,8 +24,14 @@ body {
 .restaurants-header {
   text-shadow: 3px 3px 5px #57afeb, -3px -3px 5px #57afeb; }
 
+.col-border-blue {
+  border: 0.5vw solid #57afeb; }
+
 .events-header {
   text-shadow: 3px 3px 5px #f59440, -3px -3px 5px #f59440; }
+
+.col-border-orange {
+  border: 0.5vw solid #f59440; }
 
 .text-container {
   padding-left: 1rem; }
