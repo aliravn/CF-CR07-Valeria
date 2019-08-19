@@ -99,7 +99,7 @@ var renderListOriginal = renderList.slice(0); // clone original list to be able 
 //==============================================================================
 // functions for rendering the objects from the array to display them in webpage - tested 16.08 / 10:00 working
 //==============================================================================
-function render(item) {
+function render(item) { // item = renderListOriginal[]
 	if (item.phoneNumber == undefined && item.date == undefined) {
 		$(".place").append(item.display());
 	} else if (item.date == undefined) {
