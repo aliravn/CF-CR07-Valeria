@@ -39,7 +39,7 @@ class Restaurant extends Location {
 		this.phoneNumber = phone;
 		this.cusineType = cusine;
 		this.webPage = webPage;
-		this.additionalcontent = `<p class="restaurant-color">${this.phoneNumber}</p>
+		this.additionalcontent = `<p>${this.phoneNumber}</p>
 									<p>${this.cusineType}</p>
 									<a class="web-link" href="https://${this.webPage}" target="_blank">${this.webPage}</a>`;
 	}
@@ -58,7 +58,7 @@ class Event extends Location {
 		this.date = date;
 		this.time = time;
 		this.ticketPrice = ticketPrice;
-		this.additionalcontent = `<p class="event-color">${this.date}</p>
+		this.additionalcontent = `<p>${this.date}</p>
 											<p>${this.time}</p>
 											<p>${this.ticketPrice}</p>`;
 	}
